@@ -1,0 +1,48 @@
+namespace ej2__vol8
+    //Rafael Blanco 2020-10459
+{
+    /*Contacto.Esta clase deberá tener los atributos "nombre, apellidos, telefono y direccion". También deberá tener un método "SetContacto", de tipo void y
+    con los parámetros string, que permita cambiar el valor de los atributos.También tendrá un método "Saludar", que escribirá en pantalla "Hola, soy " 
+        seguido de sus datos. Crear también una clase llamada ProbarContacto. Esta clase deberá contener sólo la función Main, que creará dos objetos de tipo Contacto,
+        les asignará los datos del contacto y les pedirá que saluden.*/
+
+
+    public class contacto
+    {
+        private string nombre;
+        private string apellido;
+        private string direccion;
+        private int numero_telefono;
+
+        public void SetContacto(string nombre)
+        {
+            this.nombre = nombre;
+
+        }
+
+        public void saludo()
+        {
+            Console.Write("Ingrese su nombre: ");
+            nombre = Console.ReadLine();
+            Console.Write("Ingrese su apellido: ");
+            apellido = Console.ReadLine();
+            Console.Write("Digite su direccion: ");
+            direccion = Console.ReadLine();
+            Console.Write("No de telefono: ");
+            
+            Console.WriteLine("Hola soy  ", nombre );
+           
+        }
+    }
+
+    public class ProbarContacto
+    {
+        public static void Main()
+        {
+            contacto cont = new contacto();
+            cont.SetContacto("contacto 1");
+            
+            cont.saludo();
+        }
+    }
+}
