@@ -1,0 +1,65 @@
+//Rafael Blanco    2020-10459
+
+namespace ejercicio_03_06
+{
+    /* Crear una clase Persona que tenga como atributos el "cedula, nombre, apellido y la edad (definir las propiedades para poder acceder a dichos atributos)". Definir como responsabilidad un método para
+     * mostrar ó imprimir.Crear una segunda clase Profesor que herede de la clase Persona.Añadir un atributo sueldo(y su propiedad) y el método para imprimir su sueldo.Definir un objeto de la clase Persona y 
+     * llamar a sus métodos y propiedades.También crear un objeto de la clase Profesor y llamar a sus métodos y propiedades.*/
+
+
+    class Persona
+    {
+        private string cedula, nombre, apellido;
+       
+        private int edad;
+
+        public Persona()
+        {
+            Console.Write("Digite su # de cedula: ");
+            cedula = Console.ReadLine( );
+            Console.Write("Ingrese su nombre: ");
+            nombre = Console.ReadLine();
+            Console.Write("Ingrese su apellido: ");
+            apellido = Console.ReadLine();
+            Console.Write("Digite su edad: ");
+            string Linea = Console.ReadLine();
+            edad = int.Parse(Linea);
+        }
+
+        public void ImprimirPantalla()
+        {
+            Console.WriteLine("Bienvenido " + nombre);
+            Console.WriteLine("Su cedula es : " + cedula);
+            Console.WriteLine("Su nombre es : " + nombre);
+            Console.WriteLine("Su apellido es : " + apellido);
+            Console.WriteLine("Su edad es " + edad);
+        }
+
+        class Profesor
+        {
+            private double Sueldo;
+
+            public Profesor()
+            {
+                Sueldo = 60000;
+            }
+
+            public void Imprimir()
+            {
+                Console.WriteLine("Su sueldo es: {0} ", Sueldo);
+            }
+
+        }
+
+        static void Main(string[] args)
+        {
+            Persona Persona1 = new Persona();
+            Profesor Profesor1 = new Profesor();
+
+            Persona1.ImprimirPantalla();
+            Profesor1.Imprimir();
+        }
+    }
+
+
+}
